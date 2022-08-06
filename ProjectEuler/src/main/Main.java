@@ -3,7 +3,7 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-import Questions.*;
+import questions.*;
 
 public class Main {
 
@@ -11,16 +11,16 @@ public class Main {
 		ArrayList<String> questions = populateQuestions();
 		
 		for(int i = 0; i < questions.size(); i++) {
-			instantiate(questions.get(i)).execute();
+			instantiate(questions.get(i), i+1).execute();
 		}
 
 		System.out.println("Complete");
 	}
 	
-	private static Question instantiate(String name) {
+	private static Question instantiate(String name, int i) {
 		try {
-			Class<?> qClass = Class.forName("Questions." + name);
-			return (Question) qClass.getDeclaredConstructor().newInstance();
+			Class<?> qClass = Class.forName("questions." + name);
+			return (Question) qClass.getDeclaredConstructor(int.class).newInstance(i);
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
