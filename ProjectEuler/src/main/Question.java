@@ -12,4 +12,7 @@ public abstract class Question {
 	protected void printAnswer(int answer) {
 		System.out.println("Q" + questionNumber + " Answer: " + answer);
 	}
+	protected void printAnswer(long answer) {
+		System.out.println("Q" + questionNumber + " Answer: " + answer);
+	}
 }

@@ -3,16 +3,10 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-import questions.*;
-
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<String> questions = populateQuestions();
-		
-		for(int i = 0; i < questions.size(); i++) {
-			instantiate(questions.get(i), i+1).execute();
-		}
+		executeAll();
 
 		System.out.println("Complete");
 	}
@@ -22,25 +16,18 @@ public class Main {
 			Class<?> qClass = Class.forName("questions." + name);
 			return (Question) qClass.getDeclaredConstructor(int.class).newInstance(i);
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -57,5 +44,13 @@ public class Main {
 			}
 		}
 		return questions;
+	}
+	
+	private static void executeAll() {
+		ArrayList<String> questions = populateQuestions();
+		
+		for(int i = 0; i < questions.size(); i++) {
+			instantiate(questions.get(i), i+1).execute();
+		}
 	}
 }
