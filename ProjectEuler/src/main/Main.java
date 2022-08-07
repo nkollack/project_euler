@@ -6,9 +6,12 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 		executeAll();
+		long endTime = System.nanoTime();
 
 		System.out.println("Complete");
+		System.out.println("Runtime: " + ((double)(endTime - startTime)/1000000) + "ms");
 	}
 	
 	private static Question instantiate(String name, int i) {
