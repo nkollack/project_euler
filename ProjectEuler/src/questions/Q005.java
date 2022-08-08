@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import main.Question;
 
-public class Q5 extends Question {
+public class Q005 extends Question {
 //	2520 is the smallest number that can be divided by each of the numbers
 //	from 1 to 10 without any remainder.
 //	What is the smallest positive number that is evenly divisible
 //	by all of the numbers from 1 to 20?
 	
-	public Q5(int i) {
+	public Q005(int i) {
 		super(i);
 	}
 	

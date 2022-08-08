@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import main.Question;
 
-public class Q8 extends Question {
+public class Q008 extends Question {
 //	The four adjacent digits in the 1000-digit number
 //	that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 //
@@ -32,7 +32,7 @@ public class Q8 extends Question {
 //	Find the thirteen adjacent digits in the 1000-digit number
 //	that have the greatest product. What is the value of this product?
 
-	public Q8(int i) {
+	public Q008(int i) {
 		super(i);
 	}
 	

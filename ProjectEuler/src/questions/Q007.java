@@ -2,12 +2,12 @@ package questions;
 
 import main.Question;
 
-public class Q7 extends Question {
+public class Q007 extends Question {
 //	By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13,
 //	we can see that the 6th prime is 13.
 //	What is the 10001st prime number?
 
-	public Q7(int i) {
+	public Q007(int i) {
 		super(i);
 	}
 	
