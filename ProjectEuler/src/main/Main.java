@@ -50,9 +50,15 @@ public class Main {
 	}
 	
 	private static void executeAll() {
+		executeAll(1, Integer.MAX_VALUE);
+	}
+	
+	// Run all questions starting with q_num1 and ending with q_num2
+	// ex: executeAll(5, 20) runs Q5-Q20
+	private static void executeAll(int q_num1, int q_num2) {
 		ArrayList<String> questions = populateQuestions();
 		
-		for(int i = 0; i < questions.size(); i++) {
+		for(int i = q_num1-1; i < Math.min(questions.size(), q_num2); i++) {
 			instantiate(questions.get(i), i+1).execute();
 		}
 	}
